@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
+
 import {IFilm} from "../../interfaces";
-import {ActivatedRoute, Router} from "@angular/router";
+import {urls} from "../../../../constants";
 
 @Component({
   selector: 'app-film',
@@ -10,17 +11,12 @@ import {ActivatedRoute, Router} from "@angular/router";
 export class FilmComponent implements OnInit {
 
   @Input()
-  film:IFilm;
+  film: IFilm;
+  movieImages: string = urls.movieImages
 
-  constructor(private router:Router, private activatedRoute:ActivatedRoute) { }
-
-  ngOnInit(): void {
+  constructor() {
   }
 
-
-  getDetail() {
-    console.log(this.film)
-    this.router.navigate([this.film.id], {relativeTo: this.activatedRoute})
-
+  ngOnInit(): void {
   }
 }

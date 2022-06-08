@@ -1,6 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import {IFilm} from "../../interfaces";
+import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute} from "@angular/router";
+
+import {DataService, FilmService} from "../../services";
+import {urls} from "../../../../constants";
+import {IFilmDetail, ITheme} from "../../interfaces";
 
 @Component({
   selector: 'app-film-detail',
@@ -9,16 +12,32 @@ import {ActivatedRoute} from "@angular/router";
 })
 export class FilmDetailComponent implements OnInit {
 
-  film:any;
+  selectedFilm: IFilmDetail;
+  movieImages: string = urls.movieImages;
+  movieRuntime: string;
+  themeStatus: ITheme;
+  filmId: number
 
-  constructor(private activatedRoute:ActivatedRoute) { }
 
-  ngOnInit(): void {
-    console.log(this.activatedRoute.data)
-    this.activatedRoute.data.subscribe(({data})=>
-      this.film = data
-    )
-    console.log(this.film)
+  constructor(private activatedRoute: ActivatedRoute,
+              private dataService: DataService,
+              private filmService: FilmService) {
   }
 
+  ngOnInit(): void {
+    this.activatedRoute.params.subscribe(({id}) => {
+        this.filmId = id
+      }
+    )
+
+    this.filmService.getById(this.filmId).subscribe((value) => {
+      this.dataService.storageFilm.next(value);
+      this.selectedFilm = value;
+      this.movieRuntime = `${Math.floor(value.runtime / 60)}h ${value.runtime % 60}m`
+    });
+
+    this.dataService.storageThemeStatus.subscribe(value => {
+      this.themeStatus = value
+    })
+  }
 }

@@ -1,0 +1,12 @@
+<div *ngIf="!actors">
+  <button (click)="getActors()">Show actors</button>
+</div>
+
+<div *ngIf="actors" class="{{!themeStatus ? 'actorBlockDark' : 'actorBlockLight'}}">
+  <app-actor
+    *ngFor="let actor of actors.cast" [actor]=actor
+    class="{{!themeStatus ? 'actorsList' : 'actorsListLight'}}"
+  >
+  </app-actor>
+</div>
+

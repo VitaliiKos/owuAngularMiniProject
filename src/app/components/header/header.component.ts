@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
+import {ITheme} from "../../modules/film/interfaces";
+import {DataService} from "../../modules/film/services";
 
 @Component({
   selector: 'app-header',
@@ -7,9 +9,22 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  constructor() { }
+  themeStatus: ITheme;
 
-  ngOnInit(): void {
+  constructor(private dataService: DataService) {
   }
 
+  ngOnInit(): void {
+    this.dataService.storageThemeStatus.subscribe(value => {
+      this.themeStatus = value
+    })
+  }
+
+  chooseTheme() {
+    this.dataService.storageThemeStatus.subscribe(value => {
+      this.themeStatus = {'status': !value.status}
+    })
+
+    this.dataService.storageThemeStatus.next(this.themeStatus);
+  }
 }

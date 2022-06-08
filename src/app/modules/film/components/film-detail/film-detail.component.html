@@ -1,7 +1,32 @@
-<div class="user_detail">
-  <div>Film deail</div>
-<!--  <div>Id: {{film.id}}</div>-->
-<!--  <div>Name: {{film.release_date}}</div>-->
-<!--  <div>Email: {{film.original_title}}</div>-->
-<!--  <div>Email: {{film.vote_average}}</div>-->
+<div class="detailCard" *ngIf="selectedFilm">
+  <div class="{{ !themeStatus ? 'movieDetail' : 'movieDetailLight'}}">
+
+    <div class="moviePoster" *ngIf="movieImages">
+      <img src='{{movieImages}}{{selectedFilm.poster_path}}' alt='{{selectedFilm.original_title}}'/>
+    </div>
+
+    <div class="moviePosterDescription">
+      <h1>{{selectedFilm.title}}({{selectedFilm.release_date.split('-')[0]}})</h1>
+      <h4>{{selectedFilm.release_date}}</h4>
+      <div class="genreList">
+        <h4>
+          <span *ngFor="let genre of selectedFilm.genres"> {{genre['name']}}</span>
+        </h4>
+        <h4>Runtime: {{movieRuntime}}</h4>
+      </div>
+
+      <h4><em>{{selectedFilm.tagline}}</em></h4>
+      <h2>Overview</h2>
+      <h4>{{selectedFilm.overview}}</h4>
+
+      <h3><a href="{{selectedFilm.homepage}}">{{selectedFilm.homepage}}</a></h3>
+      <div class="movieMark">
+        <h3>{{selectedFilm.vote_average}} / 10</h3>
+      </div>
+      <div>
+        <app-rating-form></app-rating-form>
+      </div>
+    </div>
+  </div>
 </div>
+<app-actors></app-actors>

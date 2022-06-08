@@ -2,18 +2,42 @@ import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 
-import {urls} from "../../../constants";
-import {IFilm} from "../interfaces";
+import {urls, userKey} from "../../../constants";
+import {IDataFilm, IGenre, IPage} from "../interfaces";
+import {IFilmDetail} from "../interfaces";
+import {DataGenreService} from "./data-genre.service";
 
 @Injectable({
   providedIn: 'root'
 })
 export class FilmService {
 
-  constructor(private httpClient:HttpClient) {
+  page: IPage;
+  genre: IGenre;
+
+  constructor(private httpClient: HttpClient, private dataGenreService: DataGenreService) {
+    this.dataGenreService.storagePage.subscribe(value => {
+      console.log(value)
+      this.page = value;
+    });
+
+    this.dataGenreService.storageGenre.subscribe(value => {
+      this.genre = value;
+    })
+
   }
-  getAll():Observable<IFilm[]>{
-    console.log(this.httpClient.get<IFilm[]>(urls.movies));
-    return this.httpClient.get<IFilm[]>(urls.movies);
+  ngOnInit(): void {
+
   }
+
+  getAll(): Observable<IDataFilm> {
+    return this.httpClient.get<IDataFilm>(`${urls.movies}&page=${this.page.id}&with_genres=${this.genre.id}`);
+  }
+
+  getById(id:number):Observable<IFilmDetail> {
+
+    return this.httpClient.get<IFilmDetail>(`${urls.getMovieById}${id}?api_key=${userKey}&language=en-US)`)
+
+  }
+
 }

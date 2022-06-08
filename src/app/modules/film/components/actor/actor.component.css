@@ -1,0 +1,30 @@
+.actorPosterDescription{
+  display: flex;
+  flex-direction: column;
+  row-gap: 15px;
+  padding: 5px;
+}
+
+.actorPoster{
+  width: 100%;
+  background-color: rgba(229, 80, 80, 0.56);
+  display: flex;
+  align-items: flex-start;
+
+}
+.actorPosterDescription h5 {
+  margin: 0;
+}
+
+
+.actorDetail, .actorDetailLight{
+  display: flex;
+  flex-wrap: nowrap;
+  flex-direction: column;
+  width: 100%;
+}
+
+.actorPoster img {
+  width: 100%;
+  margin: 0 auto;
+}

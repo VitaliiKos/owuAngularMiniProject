@@ -1,0 +1,43 @@
+.movieList {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  width: 100%;
+  column-gap: 2px;
+  row-gap: 10px;
+  justify-content: space-around;
+  /*padding: 10px;*/
+}
+.filmBlock{
+  width: 22%;
+}
+.filmList{
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 5px;
+  row-gap: 20px;
+  justify-content: space-around;
+}
+/*.genreList {*/
+/*  background: rgb(174, 188, 191); !* Old browsers *!*/
+/*  background: -moz-linear-gradient(top, rgba(174, 188, 191, 1) 1%, rgba(10, 8, 9, 1) 18%, rgba(110, 119, 116, 1) 64%, rgba(110, 119, 116, 1) 68%, rgba(10, 8, 9, 1) 97%); !* FF3.6-15 *!*/
+/*  background: -webkit-linear-gradient(top, rgba(174, 188, 191, 1) 1%, rgba(10, 8, 9, 1) 18%, rgba(110, 119, 116, 1) 64%, rgba(110, 119, 116, 1) 68%, rgba(10, 8, 9, 1) 97%); !* Chrome10-25,Safari5.1-6 *!*/
+/*  background: linear-gradient(to bottom, rgba(174, 188, 191, 1) 1%, rgba(10, 8, 9, 1) 18%, rgba(110, 119, 116, 1) 64%, rgba(110, 119, 116, 1) 68%, rgba(10, 8, 9, 1) 97%); !* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ *!*/
+/*  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#aebcbf', endColorstr='#0a0809', GradientType=0); !* IE6-9 *!*/
+
+/*}*/
+
+/*.genreList {*/
+/*  display: flex;*/
+/*  justify-content: center;*/
+/*  flex-wrap: wrap;*/
+/*  padding: 25px 15px;*/
+/*  !*margin-top: -10px;*!*/
+/*  width: 100%;*/
+/*  flex-grow: 5;*/
+/*  border-bottom-left-radius: 35px;*/
+/*  border-bottom-right-radius: 35px;*/
+/*  background-position: center;*/
+/*  background-size: cover;*/
+/*  background-repeat: no-repeat;*/
+/*}*/

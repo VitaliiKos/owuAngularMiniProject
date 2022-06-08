@@ -1,8 +1,23 @@
-<div class="user_block">
-  {{film.original_title}}
-  {{film.vote_average}}
-  {{film.release_date}}
-  <div class="user_button">
-    <button (click)="getDetail()">Details</button>
-  </div>
+<!--<div >-->
+
+<div class='movieCard'>
+  <a routerLink="{{film.id}}">
+
+    <div class="moviePoster" *ngIf="film.poster_path">
+      <img src='{{movieImages}}{{film.poster_path}}' alt='{{film.original_title}}'/>
+    </div>
+
+    <div class="movieCardTitle">
+      <div><h3>{{film.original_title}}</h3></div>
+
+      <div class="movieRating">
+        <h5>Vote average: {{film.vote_average}}</h5>
+        <h5>{{film.release_date}}</h5>
+      </div>
+    </div>
+
+
+  </a>
 </div>
+
+<!--</div>-->

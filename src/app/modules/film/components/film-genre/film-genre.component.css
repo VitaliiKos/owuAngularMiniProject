@@ -1,0 +1,12 @@
+.genreBlock{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.genreButtonBlock{
+  width: 18%;
+}
+.genreButtonBlock button {
+  padding: 5px 15px;
+  width: 100%;
+}
