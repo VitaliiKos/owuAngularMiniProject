@@ -1,11 +1,20 @@
-<div
-  class="genreBlock"
-  >
-  <app-genre-card *ngFor="let genre of genres" [genre]="genre"
-  class="genreButtonBlock"
+<div class="genreBlock">
 
-  >
+  <div class="buttonAllGenres">
+    <button
+      class="genreButton"
+      (click)="getMovieByAllGenre({id:'', name:''})"
+    >All genres</button>
+  </div>
 
-  </app-genre-card>
+  <app-genre-card *ngFor="let genre of genres" [genre]="genre" class="genreButtonBlock"></app-genre-card>
+
+
+</div>
+
+<div class="currentGenre">
+  <h3>Current genre: {{currentGenre.name? currentGenre.name: 'All genres'}}</h3>
+  <h3>Total pages: {{totalPages}} </h3>
+  <h3>Total results: {{totalResults}}</h3>
 </div>
 
