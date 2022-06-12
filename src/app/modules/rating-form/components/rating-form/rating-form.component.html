@@ -1,5 +1,3 @@
-<p>NgModel and reactive forms can be used without the 'rate' binding</p>
-
 <div class="mb-3">
   <ngb-rating [formControl]="ctrl"></ngb-rating>
   <div class="form-text small">
@@ -9,13 +7,7 @@
 </div>
 
 <hr>
-<pre>Model: <b>{{ ctrl.value }}</b></pre>
 <button class="btn btn-sm btn-outline-{{ ctrl.disabled ? 'danger' : 'success'}} me-2" (click)="toggle()">
   {{ ctrl.disabled ? "control disabled" : " control enabled" }}
 </button>
 <button class="btn btn-sm btn-outline-primary me-2" (click)="ctrl.setValue(null)">Clear</button>
-
-
-<!--<ngb-rating [(rate)]="currentRate"></ngb-rating>-->
-<!--<hr>-->
-<!--<pre>Rate: <b>{{currentRate}}</b></pre>-->

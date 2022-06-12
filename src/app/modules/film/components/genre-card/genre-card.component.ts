@@ -23,18 +23,11 @@ export class GenreCardComponent implements OnInit {
   }
 
   getMovieByGenre(genre: IGenre) {
-    console.log(genre)
     this.dataGenreService.storageGenre.next(genre);
 
     this.filmService.getAll().subscribe((value) => {
-      console.log('genre-card', value)
       this.dataService.storage.next(value);
     })
-  //   this.genreService.getByGenre(genre.id).subscribe((value) => {
-  //     console.log('genre-card', value)
-  //     this.dataService.storage.next(value);
-  //     console.log('34', this.dataService.storage.value.results)
-  //   })
   }
 
 }

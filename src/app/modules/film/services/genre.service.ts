@@ -16,10 +16,4 @@ export class GenreService {
   getAll(): Observable<IGenre> {
     return this.httpClient.get<IGenre>(urls.genres);
   }
-
-  // getByGenre(id:number|string):Observable<IDataFilm> {
-  //
-  //   return this.httpClient.get<IDataFilm>(`${urls.movieByGenre}&page=$&with_genres=${id}`)
-  //
-  // }
 }

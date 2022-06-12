@@ -1,3 +1,4 @@
 export * from './film/film.module';
 export * from './home/home.module';
-export  * from './rating-form/rating-form.module';
+export * from './rating-form/rating-form.module';
+export * from './profile/profile.module';

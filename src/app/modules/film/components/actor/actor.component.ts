@@ -1,7 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {IActor, ITheme} from "../../interfaces";
+
+import {IActor} from "../../interfaces";
 import {urls} from "../../../../constants";
-import {DataService} from "../../services";
 
 @Component({
   selector: 'app-actor',
@@ -11,17 +11,13 @@ import {DataService} from "../../services";
 export class ActorComponent implements OnInit {
 
   @Input()
-  actor:IActor;
-  actorImage:string = urls.actorImages
-  themeStatus:ITheme
+  actor: IActor;
+  actorImage: string = urls.actorImages
 
 
-
-  constructor(private dataService:DataService) { }
+  constructor() {
+  }
 
   ngOnInit(): void {
-    this.dataService.storageThemeStatus.subscribe(value => {
-      this.themeStatus = value
-    })
   }
 }

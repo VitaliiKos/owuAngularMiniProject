@@ -1,5 +1,5 @@
-import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import {NgModule} from '@angular/core';
+import {RouterModule, Routes} from '@angular/router';
 import {CommonModule} from "@angular/common";
 import {BrowserModule} from "@angular/platform-browser";
 
@@ -11,10 +11,11 @@ let routes: Routes = [
       {path: '', redirectTo: 'home', pathMatch: 'full'},
       {path: 'films', loadChildren: () => import('./modules').then(value => value.FilmModule)},
       {path: 'home', loadChildren: () => import('./modules').then(value => value.HomeModule)},
-      // {path: 'comments', loadChildren: () => import('./modules').then(value => value.CommentModule)},
+      {path: 'profile', loadChildren: () => import('./modules').then(value => value.ProfileModule)},
     ]
   }
 ]
+
 @NgModule({
   imports: [
     CommonModule,
@@ -22,4 +23,5 @@ let routes: Routes = [
     RouterModule.forRoot(routes)],
   exports: [RouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {
+}

@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 
 import {DataService, DataActorService, ActorService} from "../../services";
-import {IDataActor, ITheme} from "../../interfaces";
+import {IDataActor} from "../../interfaces";
 
 @Component({
   selector: 'app-actors',
@@ -15,12 +15,8 @@ export class ActorsComponent implements OnInit {
 
   filmId: number;
   actors: IDataActor;
-  themeStatus: ITheme;
 
   ngOnInit(): void {
-    this.dataService.storageThemeStatus.subscribe(value => {
-      this.themeStatus = value
-    })
   }
 
   getActors(): void {

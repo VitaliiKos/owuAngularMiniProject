@@ -6,6 +6,7 @@ import {urls, userKey} from "../../../constants";
 import {IDataFilm, IGenre, IPage} from "../interfaces";
 import {IFilmDetail} from "../interfaces";
 import {DataGenreService} from "./data-genre.service";
+import {DataService} from "./data.service";
 
 @Injectable({
   providedIn: 'root'
@@ -15,8 +16,10 @@ export class FilmService {
   page: IPage;
   genre: IGenre;
 
-  constructor(private httpClient: HttpClient, private dataGenreService: DataGenreService) {
-    this.dataGenreService.storagePage.subscribe(value => {
+  constructor(private httpClient: HttpClient,
+              private dataGenreService: DataGenreService,
+              private dataService: DataService) {
+    this.dataService.storagePage.subscribe(value => {
       this.page = value;
     });
 
@@ -29,12 +32,10 @@ export class FilmService {
   }
 
   getAll(): Observable<IDataFilm> {
-    console.log(this.genre.id)
-    return this.httpClient.get<IDataFilm>(`${urls.movies}&page=${this.page.id}&with_genres=${this.genre.id}`);
+    return this.httpClient.get<IDataFilm>(`${urls.movies}&page=${this.page.page}&with_genres=${this.genre.id}`);
   }
 
   getById(id: number): Observable<IFilmDetail> {
-
     return this.httpClient.get<IFilmDetail>(`${urls.getMovieById}${id}?api_key=${userKey}&language=en-US)`)
 
   }

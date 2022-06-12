@@ -1,25 +1,5 @@
 <div class="header">
   <a routerLink="home" routerLinkActive="active">Home</a>
   <a routerLink="films" routerLinkActive="active">Films</a>
-
-  <div>
-    <div class="toggleContainer">
-      <span
-        [style.color]="!themeStatus.status?'grey':'yellow'"
-        [style.fontSize]="'18px'">☀︎
-      </span>
-      <button
-        class="toggle"
-        (click)="chooseTheme()"
-        id="checkbox">
-<!--        type="checkbox">-->
-      <label htmlFor="checkbox"></label>
-        Switch theme
-      </button>
-
-      <span [style.color]="!themeStatus.status?'aqua':'grey'">☾</span>
-    </div>
-
-
-  </div>
+  <a routerLink="profile" routerLinkActive="active">Profile</a>
 </div>

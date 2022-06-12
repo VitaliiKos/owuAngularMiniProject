@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {HttpClient} from "@angular/common/http";
 import {Observable} from "rxjs";
 
@@ -10,8 +10,10 @@ import {IDataActor} from "../interfaces";
 })
 export class ActorService {
 
-  constructor(private httpClient:HttpClient) { }
-  getActors(id:number): Observable<IDataActor> {
+  constructor(private httpClient: HttpClient) {
+  }
+
+  getActors(id: number): Observable<IDataActor> {
     return this.httpClient.get<IDataActor>(`${API}/movie/${id}/credits?api_key=${userKey}&language=en-US`);
   }
 }

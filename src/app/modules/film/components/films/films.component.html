@@ -1,10 +1,20 @@
 <div class="movieList" *ngIf="films">
+
   <div class="genreList">
-    <app-film-genre ></app-film-genre>
+    <app-film-genre></app-film-genre>
   </div>
+
   <div class="filmList">
-    <app-film  *ngFor="let film of films" [film]="film" class="filmBlock"></app-film>
+    <app-film *ngFor="let film of films" [film]="film" class="filmBlock"></app-film>
   </div>
+
+    <div class="current_page"><h3>Page: {{page.page}}</h3></div>
+  <div class="pageButtons">
+    <button *ngIf="page.page>2" (click)="goFirstPage()">Page 1</button>
+    <button *ngIf="page.page>1" (click)="goPreviousPage()">Prev</button>
+    <button (click)="goNextPage()">Next</button>
+  </div>
+
 </div>
 
 

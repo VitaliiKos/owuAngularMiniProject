@@ -1,4 +1,3 @@
-
 import {Component} from '@angular/core';
 import {FormControl, Validators} from '@angular/forms';
 
@@ -18,14 +17,3 @@ export class NgbdRatingForm {
     }
   }
 }
-//
-// import {Component} from '@angular/core';
-//
-// @Component({
-//   selector: 'app-rating-form',
-//   templateUrl: './rating-form.component.html',
-//   styleUrls: ['./rating-form.component.css']
-// })
-// export class NgbdRatingBasic {
-//   currentRate = 8;
-// }

@@ -2,7 +2,6 @@ import {Component, OnInit} from '@angular/core';
 
 import {DataGenreService, DataService, FilmService, GenreService} from "../../services";
 import {IGenre} from "../../interfaces";
-import {variable} from "@angular/compiler/src/output/output_ast";
 
 @Component({
   selector: 'app-film-genre',
@@ -19,8 +18,8 @@ export class FilmGenreComponent implements OnInit {
 
   genres: IGenre[];
   currentGenre: IGenre;
-  totalPages:number;
-  totalResults:number;
+  totalPages: number;
+  totalResults: number;
 
   ngOnInit(): void {
     this.dataService.storage.subscribe(value => {
@@ -37,13 +36,9 @@ export class FilmGenreComponent implements OnInit {
   }
 
   getMovieByAllGenre(value: IGenre) {
-    // console.log('33', value)
     this.currentGenre = value
     this.dataGenreService.storageGenre.next(value);
-    // console.log('35', this.dataGenreService.storageGenre.value)
-
     this.filmService.getAll().subscribe((value) => {
-      // console.log('genre-card', value)
       this.dataService.storage.next(value);
 
     })

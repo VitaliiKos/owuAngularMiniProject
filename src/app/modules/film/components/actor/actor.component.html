@@ -1,13 +1,11 @@
 <div
-  class="{{!themeStatus ? 'actorDetail' : 'actorDetailLight'}}"
+  class="actorDetail"
 >
-<!--  *ngIf="actor.profile_path"-->
   <div class="actorPoster">
     <img src="{{actorImage}}{{actor.profile_path}}" alt="{{actor.original_name}}"/>
   </div>
 
   <div class="actorPosterDescription">
-    <div><h5>{{actor.id}}</h5></div>
     <div><h5>{{actor.name}}</h5></div>
     <div><h5>{{actor.character}}</h5></div>
 

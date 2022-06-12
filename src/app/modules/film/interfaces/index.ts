@@ -4,6 +4,5 @@ export * from './genre.interfaces';
 export * from './data-genre.interfaces';
 export * from './page.interfaces';
 export * from './film-detail.interfaces';
-export * from './theme.interfaces';
 export * from './data-actor.interfaces';
 export * from './actor.interfaces';

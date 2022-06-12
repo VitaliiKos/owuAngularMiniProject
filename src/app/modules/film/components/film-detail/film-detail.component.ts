@@ -3,7 +3,7 @@ import {ActivatedRoute} from "@angular/router";
 
 import {DataService, FilmService} from "../../services";
 import {urls} from "../../../../constants";
-import {IFilmDetail, ITheme} from "../../interfaces";
+import {IFilmDetail} from "../../interfaces";
 
 @Component({
   selector: 'app-film-detail',
@@ -15,8 +15,8 @@ export class FilmDetailComponent implements OnInit {
   selectedFilm: IFilmDetail;
   movieImages: string = urls.movieImages;
   movieRuntime: string;
-  themeStatus: ITheme;
-  filmId: number
+  filmId: number;
+  bkUrl = {};
 
 
   constructor(private activatedRoute: ActivatedRoute,
@@ -25,6 +25,7 @@ export class FilmDetailComponent implements OnInit {
   }
 
   ngOnInit(): void {
+
     this.activatedRoute.params.subscribe(({id}) => {
         this.filmId = id
       }
@@ -34,10 +35,14 @@ export class FilmDetailComponent implements OnInit {
       this.dataService.storageFilm.next(value);
       this.selectedFilm = value;
       this.movieRuntime = `${Math.floor(value.runtime / 60)}h ${value.runtime % 60}m`
+      this.bkUrl = this.getBkUrl();
     });
+  }
 
-    this.dataService.storageThemeStatus.subscribe(value => {
-      this.themeStatus = value
-    })
+  getBkUrl() {
+    return {
+      'background-image': `url(${this.movieImages + this.selectedFilm.backdrop_path})`
+    };
+
   }
 }

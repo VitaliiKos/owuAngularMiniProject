@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {BehaviorSubject} from "rxjs";
-import {IDataFilm, ITheme} from "../interfaces";
+import {IDataFilm, IPage} from "../interfaces";
 import {IFilmDetail} from "../interfaces";
 
 @Injectable({
@@ -43,15 +43,8 @@ export class DataService {
     vote_count: 1,
   });
 
-  // storageGenre = new BehaviorSubject<IGenre>({
-  //   id: '',
-  //   name: '',
-  // });
-  // storagePage = new BehaviorSubject<IPage>({
-  //   id: 1,
-  // });
-  storageThemeStatus = new BehaviorSubject<ITheme>({
-    status: true,
+  storagePage = new BehaviorSubject<IPage>({
+    page: 1,
   });
 
 

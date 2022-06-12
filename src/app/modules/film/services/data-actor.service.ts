@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import {Injectable} from '@angular/core';
 import {BehaviorSubject} from "rxjs";
 
 import {IDataActor} from "../interfaces";
@@ -14,5 +14,6 @@ export class DataActorService {
     id: 1,
   });
 
-  constructor() { }
+  constructor() {
+  }
 }

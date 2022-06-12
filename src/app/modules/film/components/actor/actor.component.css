@@ -3,17 +3,20 @@
   flex-direction: column;
   row-gap: 15px;
   padding: 5px;
+  align-items: center;
 }
 
 .actorPoster{
   width: 100%;
-  background-color: rgba(229, 80, 80, 0.56);
   display: flex;
   align-items: flex-start;
 
 }
 .actorPosterDescription h5 {
+  font-family: Monotype Corsiva, sans-serif;
+  color: #c0c0c0;
   margin: 0;
+  font-size: 16px;
 }
 
 
@@ -27,4 +30,7 @@
 .actorPoster img {
   width: 100%;
   margin: 0 auto;
-}
+}.actorDetail:hover{
+  background: #036093;
+   box-shadow: 0 0 0 0.25rem rgba(207, 71, 245, 0.5);
+ }
