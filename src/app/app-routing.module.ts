@@ -12,6 +12,8 @@ let routes: Routes = [
       {path: 'films', loadChildren: () => import('./modules').then(value => value.FilmModule)},
       {path: 'home', loadChildren: () => import('./modules').then(value => value.HomeModule)},
       {path: 'profile', loadChildren: () => import('./modules').then(value => value.ProfileModule)},
+      {path: 'login', loadChildren: () => import('./modules').then(value => value.LoginModule)},
+      {path: 'logout', loadChildren: () => import('./modules').then(value => value.LogoutModule)},
     ]
   }
 ]

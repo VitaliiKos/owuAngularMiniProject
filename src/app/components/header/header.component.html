@@ -1,5 +1,6 @@
 <div class="header">
-  <a routerLink="home" routerLinkActive="active">Home</a>
-  <a routerLink="films" routerLinkActive="active">Films</a>
-  <a routerLink="profile" routerLinkActive="active">Profile</a>
+  <div><a routerLink="home" routerLinkActive="active">Home</a></div>
+  <div><a routerLink="films" routerLinkActive="active">Films</a></div>
+  <div><a routerLink="profile" routerLinkActive="active" >Profile</a></div>
+  <div><a routerLink="{{title}}" routerLinkActive="active">{{title.charAt(0).toUpperCase() + title.slice(1)}}</a></div>
 </div>

@@ -1,0 +1,9 @@
+<div class="container">
+  <div class="login" *ngIf="!sessionId">
+    <form [formGroup]="loginForm">
+      <div><label>Username: <input type="text" formControlName="username"></label></div>
+      <div><label>Password: <input type="text" formControlName="password"></label></div>
+      <button (click)="login()">Login</button>
+    </form>
+  </div>
+</div>

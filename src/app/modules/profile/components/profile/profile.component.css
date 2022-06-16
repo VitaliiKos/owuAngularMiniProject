@@ -28,7 +28,6 @@
 }
 .photo{
   border: 4px solid snow;
-  /*background-image: url("1567022433819 .jpg");*/
 }
 .job, .education{
   padding: 15px 15px 15px 150px;
@@ -47,4 +46,9 @@
    color: snow;
    font-weight: bold;
    font-family: "Courier, monospace", cursive;
+}
+@media screen and (max-width: 1200px) {
+  .cv_block{
+    height: auto;
+  }
 }
